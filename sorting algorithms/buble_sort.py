@@ -23,7 +23,7 @@ print("sorted Array:")
 for i in range(len(Arr)):
     print(Arr[i],end=" ")
     
-'''The above function always runs O(N2) time even if the array is sorted.
+'''The above function always runs O(N^2) time even if the array is sorted.
  It can be optimized by stopping the algorithm if the inner loop didn’t cause any swap.
   
   n = len(Arr)
@@ -34,8 +34,8 @@ for i in range(len(Arr)):
             # traverse the array from 0 to n-1
             # Swap if the element found is greater
             # than the next element
-            if arr[j] > arr[j+1]:
-                arr[j], arr[j+1] = arr[j+1], arr[j]
+            if Arr[j] > Arr[j+1]:
+                Arr[j], Arr[j+1] = Arr[j+1], Arr[j]
                 swap = True
         if (swap == False):
             break
