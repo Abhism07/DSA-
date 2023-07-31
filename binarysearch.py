@@ -8,28 +8,30 @@ index.If the target element is less than the element at the middle index, set th
 index to the middle index – 1.If the target element is greater than the element at
  the middle index, set the low index to the middle index + 1.'''
  
-def binsearch():    
-    list=[]
-    n=int(input("Enter the number of elements to insert list:"))
-    for i in range (n):
-        e = int(input("enter key element:"))
-        list.append(e)
-    print(list)
-    key=int(input("Enter the number you want to search:"))
-    low=0
-    high=len(list)-1
-    mid=(high+low)//2
-    while (high-low >1):
-        if list[mid] < key:
-            low=mid+1
+def binary_search():
+    n = int(input("Enter the number of elements to insert in the list: "))
+    lst = []
+    for i in range(n):
+        e = int(input("Enter key element: "))
+        lst.append(e)
+    print("List:", lst)
+
+    key = int(input("Enter the number you want to search: "))
+    low = 0
+    high = len(lst) - 1
+
+    while low <= high:
+        mid = (low + high) // 2
+        if lst[mid] == key:
+            print("Element found at index", mid)
+            return  # Return immediately after finding the element
+        elif lst[mid] < key:
+            low = mid + 1
         else:
-            high=mid
-    if(list[low]==key):
-        print("Element found at index",low)
-    elif(list[high]==key):
-        print("Element found at index",high)
-    else:
-        print("Element not found")
-            
-binsearch()     
+            high = mid - 1
+
+    print("Element not found")
+
+binary_search()
+
        
